@@ -1,0 +1,25 @@
+server:
+  host: 0.0.0.0
+  port: 8100
+  query_timeout: 30
+
+oracle_client_lib: /usr/lib/oracle/19.19/client64/lib
+
+connections:
+  my_database:
+    username: MY_USER
+    password_file: /path/to/password.txt
+    dsn: hostname:port/service_name
+    pool_min: 1
+    pool_max: 5
+
+# helpers:
+#   get_recent_runs:
+#     description: "Get the N most recent runs"
+#     sql: |
+#       SELECT RUN_ID, STATUS
+#       FROM RUN ORDER BY RUN_ID DESC
+#       FETCH FIRST {limit} ROWS ONLY
+#     params:
+#       connection_name: {required: true}
+#       limit: {default: 10, type: int}
